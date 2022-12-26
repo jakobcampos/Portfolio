@@ -1,4 +1,4 @@
-# Three.js Journey
+# Jakob Campos Portfolio Website
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
