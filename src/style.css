@@ -1,0 +1,171 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-decoration: none;
+  color: white;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+html {
+    scroll-behavior: smooth;
+    background: #1e1a20;
+}
+
+.webgl {
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+    filter: brightness(50%)
+}
+
+
+.section {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+    font-family: 'Cabin', sans-serif;
+    color: #ffeded;
+    text-transform: uppercase;
+    font-size: 7vmin;
+    padding-left: 10%;
+
+}
+
+section:nth-child(odd) {
+    justify-content: flex-end;
+    margin-right:20%;
+}
+
+form {
+    background: #141414ad;
+    width: 640px;
+    margin: auto;
+    max-width: 97%;
+    border-radius: 20px;
+}
+
+form .tophalf {
+    display: flex;
+    justify-content: space-between;
+    margin: 5%;
+}
+
+form .tophalf .item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+    width: 48%;
+}
+
+form label {
+    display: block;
+    font-size: 13px;
+    letter-spacing: 3.5px;
+    margin-bottom: 16px;
+}
+
+form .tophalf .item input {
+    color: gainsboro;
+    border-radius: 4px;
+    border: 1px solid white;
+    outline: 0;
+    width: auto;
+    height: 44px;
+    background: transparent;
+    font-size: 17px;
+    padding-left:20px;
+}
+
+form .bothalf {
+    margin: 5%;
+}
+
+form .bothalf textarea {
+    color: gainsboro;
+    background: transparent;
+    border-radius: 4px;
+    border: 1px solid white;
+    outline: 0;
+    width: 100%;
+    height: 200px;
+    font-size: 17px;
+}
+
+form .action {
+    margin-bottom: 32px;
+    margin: 5%;
+}
+
+form .action input {
+    background: transparent;
+    border-radius: 4px;
+    border: 1px solid white;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    height: 44px;
+    letter-spacing: 3px;
+    outline: 0;
+    margin-right: 10px;
+}
+
+form .action input[type="submit"] {
+    background: white;
+    color: black;
+    width: 100px;
+}
+
+form .action input[type="reset"] {
+    background: white;
+    color: black;
+    width: 100px;
+}
+
+form .icons a {
+    font-size: large;
+    border: 1px solid white;
+    border-radius: 50%;
+    line-height: 36px;
+    text-align: center;
+    font-weight: 600;
+    width: 38px;
+    margin: 5%;
+}
+
+form .tophalf .item input:hover,
+form .bothalf textarea:hover,
+form .action input[type="submit"]:hover,
+form .action input[type="reset"]:hover,
+form .icons a:hover {
+    background: rgba(255, 255, 255, 0.075);
+    color:white;
+}
+
+@media (max-width: 1060px) {
+    form .tophalf {
+        flex-direction: column;
+    }
+
+    form .tophalf .item {
+        width: 100%;
+    }
+
+    form .action {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form .action input {
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}
