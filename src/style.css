@@ -14,6 +14,7 @@ html {
     background-attachment: fixed;
     scroll-behavior: smooth;
     background: #1e1a20;
+    background-image: linear-gradient(to bottom, #2d2730, #0d0b0e);
 }
 
 h2 {
@@ -33,7 +34,6 @@ h6 {
     top: 0;
     left: 0;
     outline: none;
-    filter: brightness(50%)
 }
 
 nav {
@@ -83,6 +83,8 @@ section:nth-child(odd) {
 
 form {
     background: rgba(0, 0, 0, 0.55);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
     width: 640px;
     border-radius: 20px;
     margin: auto;
@@ -139,33 +141,51 @@ form .bothalf textarea {
 
 form .action {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 32px;
-    gap: 4rem;
+}
+
+form .action button {
+    justify-content: center;
+    background: transparent;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    font-size: 13px;
+    height: 44px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    outline: 0;
+    width: 155px;
 }
 
 form .action input {
+    justify-content: center;
     background: transparent;
-    border-radius: 50px;
-    border: 1px solid white;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     cursor: pointer;
     font-size: 13px;
-    font-weight: 600;
     height: 44px;
+    font-weight: 700;
     letter-spacing: 3px;
     outline: 0;
-    margin-right: 10px;
-    width: 150px;
+    width: 155px;
 }
 
 form .action input[type="submit"] {
-    background: white;
-    color: black;
+    background: rgba(0, 0, 0, .5);
+    color: rgb(255, 255, 255);  
 }
 
 form .action input[type="reset"] {
-    background: white;
-    color: black;
+    background: rgba(0, 0, 0, .5);
+    color: rgb(255, 255, 255);
+}
+
+form .action input[class="resume"] {
+    background: rgba(0, 0, 0, .5);
+    color: rgb(255, 255, 255);
 }
 
 form .icons {
@@ -179,13 +199,30 @@ form .icons a {
     border-radius: 50%;
     line-height: 36px;
     text-align: center;
-    font-weight: 600;
     width: 38px;
     margin: 5%;
 }
 
+.icon {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 90px;
+    font-size: 38px;
+}
+
+.icon a {
+    color: #ffffffd0;
+}
+
+.icon a:hover,
 nav ul li a:hover {
     color: rgba(255, 255, 255, 0.5);
+}
+
+form .icons a:hover {
+    font-size: 30px;
+    transition: .5 ease-in-out;
 }
 
 form .tophalf .item input:hover,
@@ -193,8 +230,8 @@ form .bothalf textarea:hover,
 form .action input[type="submit"]:hover,
 form .action input[type="reset"]:hover,
 form .icons a:hover {
-    background: rgba(255, 255, 255, 0.075);
-    color: white;
+    background: rgba(97, 97, 97, 0.123);
+
 }
 
 @keyframes slideUp {
@@ -238,10 +275,19 @@ form .icons a:hover {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        gap: 1rem;
     }
 
     form .action input {
         width: 60%;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        bottom: 10px;
+        font-size: 38px;
     }
 }
 

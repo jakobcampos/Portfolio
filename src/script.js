@@ -182,6 +182,11 @@ const tick = () => {
 };
 tick();
 
+// RESUME
+document.getElementById('resume').addEventListener("click", function (event) {
+    window.open('https://docs.google.com/document/d/1v54rBGKAEpL4KGA1fdVJu57ZCoE4Q8kD6NpmyCJ020Y/edit?usp=sharing');
+});
+
 // CONTACT FORM
 emailjs.init("cXVV7F27OwfAw39ud");
 
@@ -196,10 +201,13 @@ function sendEmail() {
   let email = document.getElementById("email").value;
   let message = document.getElementById("message").value;
 
-  // Use the Email.js library to send the email
+  if(name.length <= 0) return; 
+  if(email.length <= 2) return;
+  if(message.length <= 0) return;
 
-  emailjs
-    .send("service_suzysnd", "template_mpq2vdl", {
+
+  // Use the Email.js library to send the email
+  emailjs.send("service_suzysnd", "template_mpq2vdl", {
       from_name: name,
       from_email: email,
       message: message,

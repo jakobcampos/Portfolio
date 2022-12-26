@@ -7,17 +7,19 @@
     <title>Jakob Campos</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://cdn.emailjs.com/sdk/2.3.2/email.min.js"></script>
-    <script src = "https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.js"></script>
 </head>
 
-<body>
-    <canvas class="webgl"></canvas>
+<header id="home">
     <nav>
         <ul>
             <li><a href="#projects">// projects</a></li>
             <li><a href="#contact">// contact me</a></li>
         </ul>
     </nav>
+</header>
+
+<body>
+    <canvas class="webgl"></canvas>
 
     <section class="section">
         <h2>Jakob Campos</h2>
@@ -54,6 +56,7 @@
             <div class="action">
                 <input type="submit" value="SEND">
                 <input type="reset" value="RESET">
+                <input id="resume" type="submit" value="RESUME">
             </div>
             <div class="icons">
                 <a href="https://twitter.com/jakobdevs" class="fa fa-twitter"></a>
@@ -62,7 +65,9 @@
                 <a href="https://github.com/jakobcampos" class="fa fa-github"></a>
             </div>
         </form>
+        <div class="icon"> 
+            <a href="#home" class="fa fa-arrow-circle-up"></a>
+        </div>
     </section>
 </body>
-
 </html>
