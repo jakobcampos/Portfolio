@@ -1,21 +1,31 @@
-*{
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: 'Source Sans Pro', sans-serif;
-  text-decoration: none;
-  color: white;
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    text-decoration: none;
+    color: white;
 }
 
-body{
+body,
+html {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-  }
-
-html {
     scroll-behavior: smooth;
     background: #1e1a20;
+}
+
+h2 {
+    text-shadow: 3px 3px rgba(0, 0, 0, 0.2);
+    letter-spacing: 5px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h6 {
+    font-size: 20px;
+    letter-spacing: 5px;
 }
 
 .webgl {
@@ -26,31 +36,56 @@ html {
     filter: brightness(50%)
 }
 
+nav {
+    color: white;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+}
+
+nav ul {
+    color: white;
+    font-weight: bold;
+    list-style: none;
+    display: flex;
+    gap: 4rem;
+}
 
 .section {
     display: flex;
+    justify-content: center;
     align-items: center;
     height: 100vh;
     position: relative;
-    font-family: 'Cabin', sans-serif;
     color: #ffeded;
     text-transform: uppercase;
     font-size: 7vmin;
-    padding-left: 10%;
+}
 
+section:first-of-type {
+    flex-direction: column;
+    gap: 1rem;
+}
+
+section:first-of-type h6 {
+    animation: .5s ease-in-out 0.2s 1 slideUp;
+}
+
+section:nth-child(even) {
+    justify-content: center;
 }
 
 section:nth-child(odd) {
-    justify-content: flex-end;
-    margin-right:20%;
+    justify-content: center;
 }
 
 form {
-    background: #141414ad;
+    background: rgba(0, 0, 0, 0.55);
     width: 640px;
-    margin: auto;
-    max-width: 97%;
     border-radius: 20px;
+    margin: auto;
 }
 
 form .tophalf {
@@ -76,13 +111,13 @@ form label {
 form .tophalf .item input {
     color: gainsboro;
     border-radius: 4px;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     outline: 0;
     width: auto;
     height: 44px;
     background: transparent;
     font-size: 17px;
-    padding-left:20px;
+    padding-left: 20px;
 }
 
 form .bothalf {
@@ -90,24 +125,28 @@ form .bothalf {
 }
 
 form .bothalf textarea {
-    color: gainsboro;
+    color: white;
     background: transparent;
     border-radius: 4px;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
     outline: 0;
     width: 100%;
     height: 200px;
+    resize: none;
     font-size: 17px;
+    padding: 20px;
 }
 
 form .action {
+    display: flex;
+    justify-content: center;
     margin-bottom: 32px;
-    margin: 5%;
+    gap: 4rem;
 }
 
 form .action input {
     background: transparent;
-    border-radius: 4px;
+    border-radius: 50px;
     border: 1px solid white;
     cursor: pointer;
     font-size: 13px;
@@ -116,18 +155,22 @@ form .action input {
     letter-spacing: 3px;
     outline: 0;
     margin-right: 10px;
+    width: 150px;
 }
 
 form .action input[type="submit"] {
     background: white;
     color: black;
-    width: 100px;
 }
 
 form .action input[type="reset"] {
     background: white;
     color: black;
-    width: 100px;
+}
+
+form .icons {
+    display: flex;
+    justify-content: center;
 }
 
 form .icons a {
@@ -141,16 +184,48 @@ form .icons a {
     margin: 5%;
 }
 
+nav ul li a:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
 form .tophalf .item input:hover,
 form .bothalf textarea:hover,
 form .action input[type="submit"]:hover,
 form .action input[type="reset"]:hover,
 form .icons a:hover {
     background: rgba(255, 255, 255, 0.075);
-    color:white;
+    color: white;
 }
 
-@media (max-width: 1060px) {
+@keyframes slideUp {
+    0% {
+        color: transparent;
+        transform: translateY(200%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 1424px) {
+    .section {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        color: #ffeded;
+        text-transform: uppercase;
+        font-size: 7vmin;
+    }
+
+    section:nth-child(even) {
+        flex-direction: column-reverse;
+    }
+
+    form {
+        width: 80%;
+    }
+
     form .tophalf {
         flex-direction: column;
     }
@@ -160,12 +235,32 @@ form .icons a:hover {
     }
 
     form .action {
-        display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     form .action input {
-        margin-bottom: 10px;
-        width: 100%;
+        width: 60%;
+    }
+}
+
+@media (max-width: 420px) {
+    h2 {
+        font-size: 35px;
+    }
+
+    h6 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 343px) {
+    h2 {
+        font-size: 30px;
+    }
+
+    h6 {
+        font-size: 10px;
     }
 }
